@@ -68,12 +68,4 @@ body {
   overflow: hidden;
   padding-bottom: 40px;
 }
-
-/* .timeline-wrapper {
-  width: 100%;
-  height: 800px;
-  overflow-y: scroll;
-} */
-
-/* Media queries - Responsive timeline on screens less than 600px wide */
 </style>

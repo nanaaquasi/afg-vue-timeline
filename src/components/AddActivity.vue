@@ -78,6 +78,7 @@ export default {
     submitForm(e) {
       e.preventDefault();
       this.$emit("add-new", {
+        id: Math.random(),
         initiator: this.initiator,
         action: this.action,
         activity: this.activity,

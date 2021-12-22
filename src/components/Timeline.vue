@@ -12,14 +12,6 @@
           {{ activity.activity }}
           <strong>{{ activity.position }}</strong>
         </p>
-        <!-- <time-ago
-          class="timestamp"
-          refresh
-          tooltip
-          :datetime="activity.date.getTime()"
-          locale="en"
-          long
-        ></time-ago> -->
         <timeago
           class="timestamp"
           :datetime="activity.date"
@@ -37,9 +29,6 @@ export default {
     isLatest: Boolean,
   },
   methods: {},
-  mounted() {
-    console.log("isLatest", this.isLatest);
-  },
   computed: {
     iconClass() {
       switch (this.activity.action) {
@@ -54,7 +43,7 @@ export default {
         case "started":
           return "fas fa-play";
         default:
-          return "📝";
+          return "";
       }
     },
     latest() {
