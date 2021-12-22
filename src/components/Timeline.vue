@@ -69,7 +69,7 @@ export default {
 <style scoped>
 .timeline {
   position: relative;
-  max-width: 900px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
@@ -81,7 +81,6 @@ export default {
   background-color: #e8e8e8;
 }
 
-/* The actual timeline (the vertical ruler) */
 .timeline::after {
   content: "";
   position: absolute;
@@ -89,16 +88,13 @@ export default {
   background-color: #e8e8e8;
   top: 0;
   bottom: 0;
-  /* left: 50%; */
 }
 
-/* Container around content */
 .container {
   padding: 10px 40px;
   position: relative;
   background-color: inherit;
   display: flex;
-  /* width: 50%; */
 }
 
 .circle-icon {
@@ -126,8 +122,6 @@ export default {
 .icon {
   font-size: 12px;
 }
-
-/* The actual content */
 .content {
   position: relative;
   display: flex;
@@ -146,33 +140,16 @@ export default {
 }
 
 @media screen and (max-width: 600px) {
-  /* Place the timelime to the left */
-  .timeline::after {
-    left: 31px;
-  }
-
-  /* Full-width containers */
   .container {
     width: 100%;
     padding-left: 70px;
     padding-right: 25px;
   }
 
-  /* Make sure that all arrows are pointing leftwards */
-  .container::before {
-    left: 60px;
-    border: medium solid white;
-    border-width: 10px 10px 10px 0;
-    border-color: transparent white transparent transparent;
-  }
-
-  /* Make sure all circles are at the same spot */
-  .left::after,
   .right::after {
     left: 15px;
   }
 
-  /* Make all right containers behave like the left ones */
   .right {
     left: 0%;
   }

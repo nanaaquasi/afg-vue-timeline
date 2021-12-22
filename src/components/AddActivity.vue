@@ -57,15 +57,6 @@
           name="initiator"
         />
       </div>
-      <!-- <div class="form-group">
-      <label for="initiator">Initiator</label>
-      <input
-        type="text"
-        v-model="initiator"
-        placeholder="Title"
-        name="initiator"
-      />
-    </div> -->
       <button>Add</button>
     </form>
     <hr />
