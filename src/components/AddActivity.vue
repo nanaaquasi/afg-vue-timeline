@@ -108,12 +108,14 @@ export default {
 </script>
 <style scoped>
 .container {
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   margin: 60px 0 30px 0;
-  border-bottom: 2px solid rgba(128, 128, 128, 0.288);
+  /* border-bottom: 2px solid rgba(128, 128, 128, 0.288); */
+  background-color: rgb(232, 243, 247);
 }
 .form-group {
   display: flex;
@@ -167,5 +169,38 @@ select {
 select:focus,
 select:active {
   background-color: white;
+}
+
+@media screen and (max-width: 600px) {
+  button,
+  input,
+  select {
+    width: 320px;
+    margin: 10px 0;
+  }
+
+  form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  button {
+    margin-top: 10px;
+    margin-left: 0px;
+  }
+
+  .container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0 30px 0;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 2px solid rgba(128, 128, 128, 0.288);
+    background-color: white;
+  }
 }
 </style>

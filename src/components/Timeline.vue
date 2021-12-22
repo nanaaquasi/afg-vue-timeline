@@ -129,10 +129,20 @@ export default {
 }
 
 @media screen and (max-width: 600px) {
+  .timeline {
+    max-width: 600px;
+    padding-left: 20px;
+  }
   .container {
     width: 100%;
-    padding-left: 70px;
+    padding-left: 40px;
     padding-right: 25px;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   .right::after {

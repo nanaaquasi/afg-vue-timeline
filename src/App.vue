@@ -56,6 +56,7 @@ export default {
 /* Set a background color */
 body {
   font-family: "Poppins", sans-serif;
+  font-size: 16px;
 }
 
 .main {
@@ -67,5 +68,16 @@ body {
   justify-content: center;
   overflow: hidden;
   padding-bottom: 40px;
+}
+
+@media screen and (max-width: 600px) {
+  .main {
+    width: 95%;
+    margin: 0 auto;
+  }
+
+  body {
+    font-size: 14px;
+  }
 }
 </style>
