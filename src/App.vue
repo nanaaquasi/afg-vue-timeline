@@ -1,28 +1,79 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="main">
+    <add-activity v-on:add-new="add($event)"></add-activity>
+    <div class="timeline-wrapper">
+      <timeline
+        v-for="(activity, index) in sortedActivities"
+        :activity="activity"
+        :is-latest="index === 0"
+        :key="index"
+      ></timeline>
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import { activities } from "./lib/datasource";
+
+import Timeline from "./components/Timeline.vue";
+import AddActivity from "./components/AddActivity.vue";
 
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+  name: "App",
+  components: { Timeline, AddActivity },
+  data() {
+    return {
+      allActivities: activities,
+    };
+  },
+  computed: {
+    sortedActivities() {
+      return this.allActivities.sort((a, b) => {
+        return b.date - a.date;
+      });
+    },
+  },
+
+  methods: {
+    add(activity) {
+      this.allActivities.push(activity);
+    },
+    all() {
+      return this.allActivities;
+    },
+    get(id) {
+      return this.allActivities.find((activity) => activity.id === id);
+    },
+  },
+};
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+* {
+  box-sizing: border-box;
 }
+
+/* Set a background color */
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+.main {
+  width: 75%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding-bottom: 40px;
+}
+
+/* .timeline-wrapper {
+  width: 100%;
+  height: 800px;
+  overflow-y: scroll;
+} */
+
+/* Media queries - Responsive timeline on screens less than 600px wide */
 </style>
